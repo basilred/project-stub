@@ -1,5 +1,4 @@
-var Config = require('bem-config'),
-    bem = require('@bem/gulp'),
+var bem = require('@bem/gulp'),
     gulp = require('gulp'),
     path = require('path'),
     concat = require('gulp-concat'),
@@ -14,8 +13,6 @@ var Config = require('bem-config'),
     uglify = require('gulp-uglify'),
     bemxjst = require('gulp-bem-xjst');
 
-// TODO: Use bem-config
-// var conf = Config().get();
 var project = bem({ bemconfig: {
         'libs/bem-core/common.blocks': { scheme: 'nested' },
         'libs/bem-core/desktop.blocks': { scheme: 'nested' },
@@ -32,6 +29,12 @@ var bundle = project.bundle({
     path: 'desktop.bundles/index',
     decl: 'index.bemjson.js'
 });
+
+var isProd = process.env.YENV === 'production';
+
+function skip() {
+    return through.obj();
+}
 
 gulp.task('css', function() {
     return bundle.src({
@@ -52,7 +55,7 @@ gulp.task('css', function() {
             }
         })
     ]))
-    .pipe(csso())
+    .pipe(isProd ? csso() : skip())
     .pipe(concat(bundle.name() + '.min.css'))
     .pipe(gulp.dest(bundle.path()));
 });
@@ -65,7 +68,7 @@ gulp.task('js', function() {
             extensions: ['.js', '.vanilla.js', '.browser.js']
         })
     )
-    .pipe(uglify())
+    .pipe(isProd ? uglify() : skip())
     .pipe(concat(bundle.name() + '.min.js'))
     .pipe(gulp.dest(bundle.path()));
 });
