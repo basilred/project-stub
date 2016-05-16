@@ -24,7 +24,7 @@
 Клонируем репозиторий и устанавливаем все необходимые зависимости:
 
 ```
-git clone https://github.com/bem/project-stub.git --depth 1 --branch v1.5.0 my-bem-project
+git clone https://github.com/bem/project-stub.git --depth 1 --branch v1.6.0 my-bem-project
 cd my-bem-project
 npm install  # Не используйте права суперпользователя (`root`) при установке npm- и bower-зависимостей.
 ```
@@ -123,7 +123,7 @@ bem create -l desktop.bundles -b page
 
 ## Полезные ссылки
 
-* [Создаем свой проект на БЭМ](https://ru.bem.info/articles/start-with-project-stub/)
+* [Создаем свой проект на БЭМ](https://ru.bem.info/tutorials/start-with-project-stub/)
 * [Собираем статическую страницу на БЭМ](https://ru.bem.info/tutorials/quick-start-static/)
 * [Справочное руководство по BEMJSON](https://ru.bem.info/technology/bemjson/current/bemjson/)
 * [Руководство пользователя по BEMHTML](https://ru.bem.info/libs/bem-core/current/bemhtml/reference/)

@@ -1,7 +1,7 @@
 {
   "author": "",
   "name": "bem-project-stub",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/bem/project-stub.git"
@@ -10,18 +10,18 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "bower": "^1.7.7"
+    "bower": "^1.7.9"
   },
   "devDependencies": {
     "bem": "^0.10.2",
     "borschik-tech-cleancss": "^2.1.0",
     "browser-sync": "^2.11.2",
-    "enb": "^1.1.2",
+    "enb": "^1.2.0",
     "enb-bem-techs": "^2.2.1",
-    "enb-bemxjst": "^6.2.0",
-    "enb-borschik": "^2.3.0",
+    "enb-bemxjst": "^6.4.0",
+    "enb-borschik": "^2.4.0",
     "enb-js": "^1.1.0",
-    "enb-stylus": "^2.2.0"
+    "enb-stylus": "^2.3.2"
   },
   "scripts": {
     "start": "enb server & browser-sync start --files \"*.blocks/**/*, *.bundles/**/*.bemjson.js\" --proxy 0.0.0.0:8080",
